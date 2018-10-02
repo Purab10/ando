@@ -1,17 +1,14 @@
 package e.purab.twitterc;
 
-public class Message {
+public class Tweet {
     private String message;
     private String author;
-    private String receiver;
 
-    public Message() {
-    }
+    public Tweet(){}
 
-    public Message(String message, String author, String receiver) {
+    public Tweet(String message, String author) {
         this.message = message;
         this.author = author;
-        this.receiver = receiver;
     }
 
     public String getMessage() {
@@ -28,13 +25,5 @@ public class Message {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getReciever() {
-        return receiver;
-    }
-
-    public void setReciever(String receiver) {
-        this.receiver = receiver;
     }
 }

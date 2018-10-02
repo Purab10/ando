@@ -76,15 +76,8 @@ public class MainActivity extends AppCompatActivity {
         usersDbReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
-                try {
-                    String s = ("" + dataSnapshot.getValue()).replaceAll("=", ":");
-                    Log.d("OGIL", s);
-                    JSONObject obj = new JSONObject(s);
-                    List<Message> users = new ArrayList<>();
-                    //users.add(new Message()))
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                    Log.d("OGIL", "We have a crahs");
+                for(DataSnapshot item_snapshot:dataSnapshot.getChildren()) {
+                    Log.d("OGIL", item_snapshot.getKey() + " : " + item_snapshot.getValue());
                 }
             }
 

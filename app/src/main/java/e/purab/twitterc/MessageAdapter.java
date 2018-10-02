@@ -27,15 +27,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
 
     @Override
     public void onBindViewHolder(@NonNull MessageHolder holder, int position) {
-        boolean isPhotoMessage = messages.get(position).getPhotoUrl() != null;
-        if (isPhotoMessage) {
-            holder.message.setVisibility(View.GONE);
-            holder.authorName.setVisibility(View.GONE);
-
-        } else {
-            holder.message.setText(messages.get(position).getMessage());
-            holder.authorName.setText(messages.get(position).getAuthor());
-        }
+        holder.message.setText(messages.get(position).getMessage());
+        holder.authorName.setText(messages.get(position).getAuthor());
     }
 
     @Override
